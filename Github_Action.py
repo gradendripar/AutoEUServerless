@@ -184,6 +184,7 @@ def get_pin_from_mailparser(url_id: str) -> str:
     response = requests.get(
         f"{MAILPARSER_DOWNLOAD_BASE_URL}{url_id}",
     )
+    log("PIN返回值为："+response.json())
     pin = response.json()[0]["pin"]
     return pin
 
